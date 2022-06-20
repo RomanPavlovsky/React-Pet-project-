@@ -13,7 +13,7 @@ const ProductCard = (props) => {
         <h3>{props.title}</h3>
       </div>
       <div className={style.rating}>
-        <p>Rating</p>
+        <span>{props.rating.rate}</span>
       </div>
       <div className={style.btnblock}>
         <div className={style.price}>
