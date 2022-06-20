@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 1200px;
+  background-color: rgb(232, 236, 227);
+}
+.wrapper {
+  margin: 0 auto;
+}
+
+.productSection {
+  margin: 0 auto;
+  width: 1450px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

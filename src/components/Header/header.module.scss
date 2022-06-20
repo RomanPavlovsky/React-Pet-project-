@@ -1,0 +1,67 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(234, 220, 204);
+}
+
+.logo {
+  display: flex;
+
+  margin: 0;
+  img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+  }
+  .tittle {
+    color: rgba(58, 58, 52, 0.7);
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 600ms;
+    &:hover {
+      text-decoration-color: rgba(58, 58, 52, 1);
+      color: rgba(58, 58, 52, 1);
+    }
+  }
+}
+.header {
+  margin: 0 auto;
+  width: 1450px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  .services {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .phones {
+      margin-left: 25px;
+      ul {
+        list-style: none;
+      }
+    }
+
+    .location {
+      margin-left: 25px;
+      img {
+        vertical-align: top;
+        width: 30px;
+      }
+      span {
+        color: rgba(58, 58, 52, 0.7);
+        text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+        transition: text-decoration-color 600ms;
+        &:hover {
+          text-decoration-color: rgba(58, 58, 52, 1);
+          color: rgba(58, 58, 52, 1);
+        }
+      }
+    }
+    .callback {
+      margin-left: 25px;
+    }
+  }
+}
