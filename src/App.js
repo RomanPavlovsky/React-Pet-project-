@@ -5,6 +5,7 @@ import style from "./App.scss";
 //components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
 
 //Pages
 import NotFound404 from "./pages/NotFound404";
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className={style.wrapper}>
       <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/Cart" element={<Cart />}></Route>
