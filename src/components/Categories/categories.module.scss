@@ -1,0 +1,34 @@
+.wrapper {
+  .categories {
+    ul {
+      display: flex;
+      align-items: flex-start;
+      list-style: none;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 40px;
+        margin-right: 20px;
+        cursor: pointer;
+        background-color: rgb(185, 174, 162);
+        border-radius: 25px;
+        transition: background-color 0.1s ease-in-out;
+
+        &:hover {
+          background-color: darken(#f9f9f9, 2%);
+        }
+        &:active {
+          background-color: darken(#f9f9f9, 5%);
+        }
+
+        &.active {
+          background-color: #282828;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
