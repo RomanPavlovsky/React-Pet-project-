@@ -1,7 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import style from "./App.scss";
+
+//components
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 //Pages
 import NotFound404 from "./pages/NotFound404";
@@ -19,6 +22,7 @@ function App() {
         <Route path="/Favorites" element={<Favorites />}></Route>
         <Route path="*" element={<NotFound404 />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
