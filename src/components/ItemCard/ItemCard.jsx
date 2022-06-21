@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Rating } from "react-simple-star-rating";
 // import AddButton from "../AddCartButton/AddCartButton";
 // import AddFavoriteButton from "../AddFavoriteButton/AddFavoriteButton";
 import style from "./itemcard.module.scss";
@@ -14,6 +15,11 @@ const ProductCard = (props) => {
       </div>
       <div className={style.rating}>
         <span>{props.rating.rate}</span>
+        <Rating
+          ratingValue={props.rating.rate * 20}
+          size={26}
+          readonly={true}
+        />
       </div>
       <div className={style.btnblock}>
         <div className={style.price}>
