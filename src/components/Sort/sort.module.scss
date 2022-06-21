@@ -16,8 +16,9 @@
   .popup {
     box-shadow: 0px 0px 5px black;
     position: absolute;
-    right: 0;
-    margin-top: 15px;
+    right: 0px;
+    z-index: 10;
+
     background: #ffffff;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
     border-radius: 10px;

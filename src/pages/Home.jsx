@@ -1,7 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
+
 import ItemCard from "../components/ItemCard/ItemCard";
 import Sort from "../components/Sort/Sort";
+
+import style from "./home.module.scss";
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -12,10 +15,12 @@ const Home = () => {
   }, []);
   // const [searchValue, SetSearchValue] = useState("");
   return (
-    <div className="homeWrapper">
+    <div className={style.wrapper}>
       {/* <Slider /> */}
-      <section className="productSection">
+      <section className={style.sort}>
         <Sort />
+      </section>
+      <section className={style.products}>
         {items.map((arr) => (
           <ItemCard key={arr.id} {...arr} />
         ))}
