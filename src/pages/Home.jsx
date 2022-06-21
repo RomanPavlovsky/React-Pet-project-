@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ItemCard from "../components/ItemCard/ItemCard";
+import Sort from "../components/Sort/Sort";
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -14,6 +15,7 @@ const Home = () => {
     <div className="homeWrapper">
       {/* <Slider /> */}
       <section className="productSection">
+        <Sort />
         {items.map((arr) => (
           <ItemCard key={arr.id} {...arr} />
         ))}
