@@ -1,23 +1,26 @@
 .wrapper {
-  height: 50px;
+  width: 100%;
+  min-width: 280px;
+
+  height: 60px;
   position: relative;
 
-  .search_input {
+  .input {
+    width: 100%;
     color: rgb(65, 65, 65);
     min-width: 280px;
     outline: none;
     font-size: 20px;
-    height: 40px;
+    height: 60px;
     padding: 4px 70px 4px 20px;
     background-color: transparent;
     border: 2px solid rgba(243, 243, 238, 0.7);
-    border-radius: 35px;
+    border-radius: 60px;
     transition: all 0.25s ease-in-out;
 
     &::placeholder {
       color: rgba(243, 243, 238, 0.7);
     }
-
     &:focus {
       &::placeholder {
         transition: opacity 0.25s ease;
@@ -25,16 +28,15 @@
       }
     }
   }
-
-  .search_btn {
+  .button {
     border: 2px solid rgba(243, 243, 238, 0.7);
     overflow: hidden;
     background: rgba(243, 243, 238, 0.5);
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     padding: 4px;
     position: absolute;
-    border-radius: 35px;
+    border-radius: 60px;
     right: 0px;
     top: 0px;
     transition: all 0.3s ease-in-out;

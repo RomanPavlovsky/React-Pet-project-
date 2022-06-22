@@ -3,29 +3,28 @@ import style from "./header.module.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import location from "../../assets/icons/location.svg";
+
 const Header = () => {
   return (
     <header className={style.wrapper}>
       <div className={style.header}>
-        <Link style={{ textDecoration: "none" }} to="/">
-          <div className={style.logo}>
-            <img src={logo} alt="logo" />
-            <h1 className={style.tittle}>Online shop</h1>
-          </div>
+        <Link className={style.logo} to="/">
+          <img src={logo} alt="logo" />
+          <h1 className={style.tittle}>Online shop</h1>
         </Link>
         <div className={style.services}>
           <div className={style.phones}>
             <ul>
               <li>
-                <b>A1</b>
+                <h4>A1</h4>
                 <span>+375 44 000 00 00</span>
               </li>
               <li>
-                <b>MTC</b>
+                <h4>MTC</h4>
                 <span>+375 33 000 00 00</span>
               </li>
               <li>
-                <b>Life </b>
+                <h4>Life </h4>
                 <span>+375 25 000 00 00</span>
               </li>
             </ul>
@@ -33,12 +32,12 @@ const Header = () => {
           <div className={style.callback}>
             <button>Заказать звонок</button>
           </div>
-          <Link style={{ textDecoration: "none" }} to="*">
-            <div className={style.location}>
+          <div className={style.location}>
+            <Link style={{ textDecoration: "none" }} to="*">
               <img src={location} alt="location" />
               <span>Адреса магазинов</span>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
     </header>

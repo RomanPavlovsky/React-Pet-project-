@@ -16,15 +16,16 @@ const Home = () => {
   // const [searchValue, SetSearchValue] = useState("");
   return (
     <div className={style.wrapper}>
-      {/* <Slider /> */}
-      <section className={style.sort}>
-        <Sort />
-      </section>
-      <section className={style.products}>
-        {items.map((arr) => (
-          <ItemCard key={arr.id} {...arr} />
-        ))}
-      </section>
+      <div className={style.home}>
+        <section className={style.sort}>
+          <Sort />
+        </section>
+        <section className={style.products}>
+          {items.map((arr) => (
+            <ItemCard key={arr.id} {...arr} />
+          ))}
+        </section>
+      </div>
     </div>
   );
 };

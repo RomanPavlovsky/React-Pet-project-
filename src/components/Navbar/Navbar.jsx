@@ -7,22 +7,30 @@ const Navbar = () => {
   return (
     <nav className={style.wrapper}>
       <div className={style.navbar}>
-        <Search />
+        <div className={style.category}>
+          <button>category</button>
+        </div>
+        <div className={style.search}>
+          <Search />
+        </div>
         <div className={style.buttons}>
-          <Link style={{ textDecoration: "none" }} to="/Cart">
-            <div className={style.cartbtn}>
-              <img src="#" alt="cartButton" />
-              <span>cart</span>
-            </div>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="/Favorites">
-            <div className={style.favorbtn}>
-              <img src="#" alt="favoriteButton" />
-            </div>
-          </Link>
+          <div className={style.cartbtn}>
+            <Link style={{ textDecoration: "none" }} to="/Cart">
+              <img src="#" alt="cart" />
+              <span></span>
+            </Link>
+          </div>
+
+          <div className={style.favorbtn}>
+            <Link style={{ textDecoration: "none" }} to="/Favorites">
+              <img src="#" alt="fav" />
+              <span></span>
+            </Link>
+          </div>
+
           <div className={style.loginbtn}>
-            <img src="#" alt="LoginButton" />
-            <span>Вход</span>
+            <img src="#" alt="log" />
+            <span></span>
           </div>
         </div>
       </div>
