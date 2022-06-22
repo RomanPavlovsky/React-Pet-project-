@@ -1,22 +1,30 @@
 .wrapper {
-  margin: 0 auto;
-  height: 100vh;
-  width: 1450px;
-  padding: 25px;
-  .header {
-    display: flex;
-    justify-content: space-between;
-  }
-  .footer {
-    position: relative;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    .buybtn {
-      border: none;
-      outline: none;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1rem;
+  background: rgb(145, 178, 145);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  .cart {
+    height: 60vh;
+    border: 1px solid black;
+    max-width: 1450px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+    }
+    .items {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

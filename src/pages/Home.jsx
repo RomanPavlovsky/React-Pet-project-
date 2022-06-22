@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import ItemCard from "../components/ItemCard/ItemCard";
 import Sort from "../components/Sort/Sort";
+import Categories from "../components/Categories/Categories";
 
 import style from "./home.module.scss";
 
@@ -18,6 +19,7 @@ const Home = () => {
     <div className={style.wrapper}>
       <div className={style.home}>
         <section className={style.sort}>
+          <Categories />
           <Sort />
         </section>
         <section className={style.products}>

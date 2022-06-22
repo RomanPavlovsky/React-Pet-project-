@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "categories.module.scss";
+import style from "./categor.module.scss";
 
 const Categories = (active, setActive) => {
   const [activeIndex, setActiveIndex] = useState(0);
