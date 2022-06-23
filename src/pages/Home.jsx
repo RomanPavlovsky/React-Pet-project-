@@ -1,7 +1,6 @@
 //library
 import React, { useContext } from "react";
-// import axios from "axios";
-
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { SearchContext } from "../App";
 //redux
@@ -37,15 +36,22 @@ const Home = () => {
     const sortBy = sortType.replace("+", "");
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const search = searchValue ? `&search=${searchValue}` : "";
-    fetch(
-      `https://62b413c3a36f3a973d2b56f5.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}${search}`
-    )
-      .then((res) => res.json())
-      .then((arr) => {
-        setItems(arr);
+    //   fetch(
+    //     `https://62b413c3a36f3a973d2b56f5.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}${search}`
+    //   )
+    //     .then((res) => res.json())
+    //     .then((arr) => {
+    //       setItems(arr);
+    //     });
+    // }, [categoryId, sortType, searchValue]);
+    axios
+      .get(
+        `https://62b413c3a36f3a973d2b56f5.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}${search}`
+      )
+      .then((res) => {
+        setItems(res.data);
       });
   }, [categoryId, sortType, searchValue]);
-
   return (
     <div className={style.wrapper}>
       <div className={style.home}>
