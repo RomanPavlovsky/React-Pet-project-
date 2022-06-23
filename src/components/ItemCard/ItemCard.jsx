@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Rating } from "react-simple-star-rating";
 // import AddButton from "../AddCartButton/AddCartButton";
 // import AddFavoriteButton from "../AddFavoriteButton/AddFavoriteButton";

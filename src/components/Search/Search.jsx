@@ -1,15 +1,31 @@
-import React, { useContext, useRef } from "react";
-import style from "./search.module.scss";
+import React, { useContext, useRef, useState, useCallback } from "react";
+import debounce from "lodash.debounce";
+import { SearchContext } from "../../App";
 import SearchIcon from "./search-icon.svg";
 import closeIcon from "./close-icon.svg";
-import { SearchContext } from "../../App";
+import style from "./search.module.scss";
 const Search = () => {
+  //autotarget after close
   const inputRef = useRef();
   const onClickClear = () => {
     setSearchValue("");
+    setValue("");
     inputRef.current.focus();
   };
-  const { searchValue, setSearchValue } = useContext(SearchContext);
+  //serach with context
+  const { setSearchValue } = useContext(SearchContext);
+  //debounche
+  const [value, setValue] = useState("");
+  const updateSearchValue = useCallback(
+    debounce((str) => {
+      setSearchValue(str);
+    }, 500),
+    []
+  );
+  const onChangeInput = (event) => {
+    setValue(event.target.value);
+    updateSearchValue(event.target.value);
+  };
   return (
     <div>
       <form className={style.wrapper}>
@@ -17,10 +33,10 @@ const Search = () => {
           ref={inputRef}
           className={style.input}
           placeholder="Search..."
-          onChange={(event) => setSearchValue(event.target.value)}
-          value={searchValue}
+          onChange={onChangeInput}
+          value={value}
         />
-        {searchValue && (
+        {value && (
           <div onClick={onClickClear} className={style.clear}>
             <img src={closeIcon} alt="close" />
           </div>
