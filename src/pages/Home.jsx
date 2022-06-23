@@ -1,8 +1,9 @@
 //library
-import React from "react";
+import React, { useContext } from "react";
 // import axios from "axios";
 // //react
 import { useState, useEffect } from "react";
+import { SearchContext } from "../App";
 //redux
 // import { useSelector, useDispatch } from "react-redux";
 // import { setCategoryId, setSort } from "../Redux/Slices/filterSlice";
@@ -14,6 +15,7 @@ import Sort from "../components/Sort/Sort";
 import style from "./home.module.scss";
 
 const Home = () => {
+  const { searchValue, setSearchValue } = useContext(SearchContext);
   const [items, setItems] = useState([]);
   const [categoryId, setCategoryId] = useState(0);
   const [sortType, setSortType] = useState({
@@ -25,14 +27,15 @@ const Home = () => {
     const order = sortType.sortProperty.includes("+") ? "asc" : "desc";
     const sortBy = sortType.sortProperty.replace("+", "");
     const category = categoryId > 0 ? `category=${categoryId}` : "";
+    const search = searchValue ? `&search=${searchValue}` : "";
     fetch(
-      `https://62b413c3a36f3a973d2b56f5.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}`
+      `https://62b413c3a36f3a973d2b56f5.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}${search}`
     )
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
       });
-  }, [categoryId, sortType]);
+  }, [categoryId, sortType, searchValue]);
 
   return (
     <div className={style.wrapper}>
