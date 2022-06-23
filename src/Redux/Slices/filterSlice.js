@@ -8,10 +8,10 @@ const initialState = {
   },
 };
 export const filterSlice = createSlice({
-  name: "filters",
+  name: "filter",
   initialState,
   reducers: {
-    setCategoryID: (state, action) => {
+    setCategoryId: (state, action) => {
       state.categoryId = action.payload;
     },
     setSort: (state, action) => {
