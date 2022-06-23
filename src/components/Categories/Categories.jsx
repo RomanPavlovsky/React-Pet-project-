@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { memo } from "react";
 import style from "./categor.module.scss";
 
-const Categories = (active, setActive) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const Categories = ({ value, onChangeCategory }) => {
   const categories = [
     "Все",
     "Мужская одежда",
@@ -10,18 +9,17 @@ const Categories = (active, setActive) => {
     "Электроника",
     "Украшения",
   ];
-  const onClickCategory = (i) => setActiveIndex(i);
   return (
     <div className={style.wrapper}>
       <div className={style.categories}>
         <ul>
-          {categories.map((value, i) => (
+          {categories.map((name, i) => (
             <li
               key={i}
-              onClick={() => onClickCategory(i)}
-              className={activeIndex === i ? style.active : ""}
+              onClick={() => onChangeCategory(i)}
+              className={value === i ? style.active : ""}
             >
-              {value}
+              {name}
             </li>
           ))}
         </ul>
