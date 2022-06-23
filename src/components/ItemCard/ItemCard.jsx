@@ -15,11 +15,7 @@ const ProductCard = (props) => {
       </div>
       <div className={style.rating}>
         <span>{props.rating.rate}</span>
-        <Rating
-          ratingValue={props.rating.rate * 20}
-          size={26}
-          readonly={true}
-        />
+        <Rating ratingValue={props.rating * 20} size={26} readonly={true} />
       </div>
       <div className={style.btnblock}>
         <div className={style.price}>

@@ -1,14 +1,8 @@
-import React, { memo } from "react";
+import React from "react";
 import style from "./categor.module.scss";
 
 const Categories = ({ value, onChangeCategory }) => {
-  const categories = [
-    "Все",
-    "Мужская одежда",
-    "Женская одежда",
-    "Электроника",
-    "Украшения",
-  ];
+  const categories = ["Все", "Умные часы", "Смартфоны", "Наушники", "Рюкзаки"];
   return (
     <div className={style.wrapper}>
       <div className={style.categories}>

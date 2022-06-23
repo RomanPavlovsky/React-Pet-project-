@@ -1,35 +1,48 @@
 //library
 import React from "react";
+// import axios from "axios";
+// //react
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { store } from "../Redux/Store";
-import { setCategoryID } from "../Redux/Slices/filterSlice";
+//redux
+// import { useSelector, useDispatch } from "react-redux";
+// import { setCategoryId, setSort } from "../Redux/Slices/filterSlice";
 //components
 import ItemCard from "../components/ItemCard/ItemCard";
 import Categories from "../components/Categories/Categories";
+import Sort from "../components/Sort/Sort";
 //style
 import style from "./home.module.scss";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const categoryID = useSelector((state) => state.filterSlice.categoryID);
-  const onChangeCategory = (id) => {
-    dispatch(setCategoryID(id));
-  };
-
   const [items, setItems] = useState([]);
+  const [categoryId, setCategoryId] = useState(0);
+  const [sortType, setSortType] = useState({
+    name: "Рейтингу",
+    sortProperty: "rating",
+  });
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?category")
+    const order = sortType.sortProperty.includes("+") ? "asc" : "desc";
+    const sortBy = sortType.sortProperty.replace("+", "");
+    const category = categoryId > 0 ? `category=${categoryId}` : "";
+    fetch(
+      `https://62b413c3a36f3a973d2b56f5.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}`
+    )
       .then((res) => res.json())
-      .then((arr) => setItems(arr));
-  }, []);
+      .then((arr) => {
+        setItems(arr);
+      });
+  }, [categoryId, sortType]);
 
   return (
     <div className={style.wrapper}>
       <div className={style.home}>
         <section className={style.menu}>
-          <Categories value={categoryID} onChangeCategory={onChangeCategory} />
+          <Categories
+            value={categoryId}
+            onChangeCategory={(i) => setCategoryId(i)}
+          />
+          <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
         </section>
         <section className={style.products}>
           {items.map((arr) => (
