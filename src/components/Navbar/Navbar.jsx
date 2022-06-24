@@ -10,9 +10,9 @@ const Navbar = () => {
   return (
     <nav className={style.wrapper}>
       <div className={style.navbar}>
-        {/* <div className={style.category}>
-          <button>category</button>
-        </div> */}
+        <div className={style.category}>
+          <button>burger</button>
+        </div>
         <div className={style.search}>
           <Search />
         </div>
