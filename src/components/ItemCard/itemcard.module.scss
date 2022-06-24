@@ -28,7 +28,7 @@
   .title {
     text-overflow: ellipsis;
     max-width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     align-self: flex-start;
 
     h3 {
@@ -39,10 +39,11 @@
     }
   }
   .rating {
-    padding: 5px;
+    padding: 5px 10px;
     align-self: flex-start;
   }
   .btnblock {
+    padding: 0 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -51,6 +52,23 @@
       display: block;
       font-size: 1.2rem;
       font-weight: 700;
+    }
+    .favorit {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      border-radius: 50%;
+      img {
+        width: 30px;
+        height: 20px;
+      }
+      &:hover {
+        background: yellow;
+      }
+    }
+    .buy {
+      cursor: pointer;
+      width: 80px;
     }
   }
 }

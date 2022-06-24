@@ -27,16 +27,44 @@
     display: flex;
     justify-content: baseline;
     .cartbtn {
+      position: relative;
       margin-left: 20px;
       cursor: pointer;
       width: 45px;
       height: 45px;
+      span {
+        padding: 4px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 25px;
+        min-width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: white;
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
     }
     .favorbtn {
+      position: relative;
       margin-left: 20px;
       cursor: pointer;
       width: 45px;
       height: 45px;
+      span {
+        padding: 4px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 25px;
+        min-width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: white;
+      }
     }
     .loginbtn {
       margin-left: 20px;

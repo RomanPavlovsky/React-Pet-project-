@@ -14,23 +14,21 @@ import Sort from "../components/Sort/Sort";
 import style from "./home.module.scss";
 
 const Home = () => {
+  //filtration redux
   const { categoryId, sort } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty;
   const dispatch = useDispatch();
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
   };
-
   const onChangeSort = (id) => {
     dispatch(setSort(id));
   };
+  //search context
   const { searchValue } = useContext(SearchContext);
+  //items props - children
   const [items, setItems] = useState([]);
-  // const [sortType, setSortType] = useState({
-  //   name: "Рейтингу",
-  //   sortProperty: "rating",
-  // });
-
+  //API -mocapi my data
   useEffect(() => {
     const order = sortType.includes("+") ? "asc" : "desc";
     const sortBy = sortType.replace("+", "");

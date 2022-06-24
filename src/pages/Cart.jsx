@@ -1,23 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./cart.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+
+import Cartitem from "../components/CartItem/Cartitem";
 const Cart = () => {
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.cart.items);
+
   return (
     <div className={style.wrapper}>
       <div className={style.cart}>
         <div className={style.top}>
           <div className={style.title}>
-            <h2>Корзина:</h2>
+            <h2>Ваша корзина:</h2>
           </div>
           <div className={style.clearbtn}>
             <button>Очистить корзину</button>
           </div>
         </div>
         <div className={style.items}>
-          <h3>Товар</h3>
-          <h3>Кол-во</h3>
-          <h3>Цена за ед.</h3>
-          <h3>удалить товар</h3>
+          {items.map((item) => (
+            <Cartitem key={item.id} {...item} />
+          ))}
         </div>
         <div className={style.bottom}>
           <Link style={{ textDecoration: "none" }} to="/">

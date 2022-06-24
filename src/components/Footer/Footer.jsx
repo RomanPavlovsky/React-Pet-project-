@@ -56,8 +56,8 @@ const Footer = () => {
       </div>
       <div className={style.bottominfo}>
         <p>
-          Все права не защищены © Just a pet-project with React , Redux, SCSS
-          and other libraries
+          Все права не защищены ©2022 a pet-project with React , Redux, SCSS and
+          other libraries
         </p>
       </div>
     </div>
