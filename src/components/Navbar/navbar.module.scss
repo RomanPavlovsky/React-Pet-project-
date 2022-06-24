@@ -5,24 +5,23 @@
   width: 100vw;
   display: flex;
   justify-content: center;
-  background-color: rgb(208, 208, 113);
+  background-color: rgb(221, 223, 56);
 }
 .navbar {
-  background: rgb(208, 208, 113);
-  border: 1px solid black;
   max-width: 1450px;
   width: 100%;
   margin: 0 auto;
   padding: 10px 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   .category {
     margin-right: 20px;
     display: flex;
   }
   .search {
-    width: 60%;
+    justify-self: center;
+    width: 50%;
   }
   .buttons {
     display: flex;
@@ -30,20 +29,20 @@
     .cartbtn {
       margin-left: 20px;
       cursor: pointer;
-      width: 60px;
-      height: 60px;
+      width: 45px;
+      height: 45px;
     }
     .favorbtn {
       margin-left: 20px;
       cursor: pointer;
-      width: 60px;
-      height: 60px;
+      width: 45px;
+      height: 45px;
     }
     .loginbtn {
       margin-left: 20px;
       cursor: pointer;
-      width: 60px;
-      height: 60px;
+      width: 45px;
+      height: 45px;
     }
   }
 }

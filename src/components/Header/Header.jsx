@@ -29,9 +29,11 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className={style.callback}>
-            <button>Заказать звонок</button>
-          </div>
+          <Link style={{ textDecoration: "none" }} to="*">
+            <button className={style.callback}>
+              <b>Заказать звонок</b>
+            </button>
+          </Link>
           <div className={style.location}>
             <Link style={{ textDecoration: "none" }} to="*">
               <img src={location} alt="location" />

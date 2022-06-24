@@ -3,7 +3,7 @@
   width: 100vw;
   display: flex;
   justify-content: center;
-  .cart {
+  .favorite {
     height: 60vh;
     max-width: 1450px;
     width: 100%;
@@ -16,7 +16,7 @@
     .items {
       padding: 25px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
       grid-column-gap: 20px;
       grid-row-gap: 20px;

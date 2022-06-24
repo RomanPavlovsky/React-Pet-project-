@@ -1,9 +1,33 @@
 .footer {
-  // position: absolute;
-  // bottom: 0;
-  // left: 0;
-  background-color: rgb(221, 67, 67);
-  color: white;
-  width: 100%;
-  height: 300px;
+  position: relative;
+  background-color: rgba(87, 94, 53, 0.601);
+  width: 100vw;
+  padding: 25px;
+  @media screen and (max-width: 780px) {
+    display: none;
+  }
+  .linksinfo {
+    display: flex;
+    justify-content: space-around;
+    ul {
+      h3 {
+        color: white;
+      }
+      list-style: none;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 2;
+      li {
+        cursor: pointer;
+        &:hover {
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+  .bottominfo {
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }
